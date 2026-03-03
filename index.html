@@ -14,7 +14,7 @@
 
     // 2. Explicitly tell CheerpJ where to find the JAR
     // This ensures the file is loaded into the virtual /app/ directory
-    await cheerpjAddStringFile("/app/plate-tectonics_en.jar", await (await fetch("plate-tectonics_en.jar")).arrayBuffer());
+    await cheerpjAddStringFile("plate-tectonics_en.jar", await (await fetch("plate-tectonics_en.jar")).arrayBuffer());
 
     // 3. Launch the application
     await cheerpjRunMain("edu.colorado.phet.platetectonics.PlateTectonicsApplication", "/app/plate-tectonics_en.jar");
@@ -22,4 +22,5 @@
 </script>
   </body>
 </html>
+
 
