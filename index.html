@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plate Tectonics Simulation</title>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
+</head>
+<body>
+    <div id="simulation-container"></div>
+    <script>
+      (async () => {
+        // Initialize CheerpJ
+        await cheerpjInit();
+        
+        // --- EDIT BELOW ---
+        // 1. Replace 'your-username' with your actual GitHub username
+        // 2. Replace 'your-repo-name' with the name of your repository
+        // 3. Ensure the jar name matches exactly (case-sensitive)
+        const jarPath = "/app/plate-tectonics_en.jar";
+        const mainClass = "edu.colorado.phet.platetectonics.PlateTectonicsApplication"; 
+        // Note: You must verify the main class name. 
+        // If the above doesn't work, let me know and I can help you find the correct one!
+        
+        await cheerpjRunMain(mainClass, jarPath);
+      })();
+    </script>
+</body>
+</html>
