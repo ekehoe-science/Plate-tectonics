@@ -7,18 +7,19 @@
   </head>
   <body>
     <div id="simulation-container"></div>
-    <script>
-      (async () => {
-        // Initialize the CheerpJ runtime
-        await cheerpjInit();
-        
-        // Launch the simulation
-        // Note: The path /app/ is the virtual root for your uploaded JAR
-        await cheerpjRunMain(
-            "edu.colorado.phet.platetectonics.PlateTectonicsApplication", 
-            "/app/plate-tectonics_en.jar"
-        );
-      })();
-    </script>
+   <script>
+  (async () => {
+    // 1. Initialize CheerpJ
+    await cheerpjInit();
+
+    // 2. Explicitly tell CheerpJ where to find the JAR
+    // This ensures the file is loaded into the virtual /app/ directory
+    await cheerpjAddStringFile("/app/plate-tectonics_en.jar", await (await fetch("plate-tectonics_en.jar")).arrayBuffer());
+
+    // 3. Launch the application
+    await cheerpjRunMain("edu.colorado.phet.platetectonics.PlateTectonicsApplication", "/app/plate-tectonics_en.jar");
+  })();
+</script>
   </body>
 </html>
+
