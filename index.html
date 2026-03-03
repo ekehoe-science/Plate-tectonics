@@ -7,20 +7,18 @@
   </head>
   <body>
     <div id="simulation-container"></div>
-   <script>
-  (async () => {
-    // 1. Initialize CheerpJ
-    await cheerpjInit();
-
-    // 2. Explicitly tell CheerpJ where to find the JAR
-    // This ensures the file is loaded into the virtual /app/ directory
-    await cheerpjAddStringFile("plate-tectonics_en.jar", await (await fetch("plate-tectonics_en.jar")).arrayBuffer());
-
-    // 3. Launch the application
-    await cheerpjRunMain("edu.colorado.phet.platetectonics.PlateTectonicsApplication", "/app/plate-tectonics_en.jar");
-  })();
-</script>
+    <script>
+      (async () => {
+        // Initialize CheerpJ
+        await cheerpjInit();
+        
+        // Use the direct URL to your JAR file on GitHub Pages
+        // This is much more reliable and avoids the "Deprecated" warning
+        await cheerpjRunMain(
+            "edu.colorado.phet.platetectonics.PlateTectonicsApplication", 
+            "/plate-tectonics_en.jar"
+        );
+      })();
+    </script>
   </body>
 </html>
-
-
